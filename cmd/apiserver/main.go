@@ -3,8 +3,7 @@ package main
 import (
 	"log"
 	"flag"
-
-	"../../internal/app/apiserver"
+	"github.com/gordevital/http-rest-api/internal/app/apiserver"
 	"github.com/BurntSushi/toml"
 )
 
@@ -24,6 +23,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 	s := apiserver.New(config)
 	if err := s.Start(); err != nil {
 		log.Fatal(err)
